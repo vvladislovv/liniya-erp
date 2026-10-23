@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<title>Линия ERP — демо управления линейным персоналом</title>
+<meta name="description" content="Кликабельное демо ERP для линейного персонала: комплектование смен, бригадир со смартфона, WorkFact, начисления, выплаты и показатели. Все данные вымышленные.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#FFFFFF">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1D1B27">
+<meta name="color-scheme" content="light dark">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Линия ERP">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:title" content="Линия ERP — демо">
+<meta property="og:description" content="Полный цикл: заказ → комплектование → факт → начисление → выплата. Попробуйте за каждую роль.">
+<meta property="og:image" content="og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2317151F'/%3E%3Crect x='7' y='9' width='18' height='3.2' rx='1.6' fill='%238B66FF'/%3E%3Crect x='7' y='14.4' width='13' height='3.2' rx='1.6' fill='%23ffffff'/%3E%3Crect x='7' y='19.8' width='8' height='3.2' rx='1.6' fill='%23ffffff' opacity='.55'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+<div class="shell" id="shell">
+  <aside class="side" id="side" aria-label="Разделы">
+    <a class="brand" href="#/" aria-label="Линия ERP">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" width="30" height="30"><rect width="32" height="32" rx="8" fill="currentColor"/><rect x="7" y="9" width="18" height="3.2" rx="1.6" fill="#8B66FF"/><rect x="7" y="14.4" width="13" height="3.2" rx="1.6" fill="var(--side-bg)"/><rect x="7" y="19.8" width="8" height="3.2" rx="1.6" fill="var(--side-bg)" opacity=".55"/></svg></span>
+      <span class="brand-text"><b>Линия ERP</b><small>Линейный персонал</small></span>
+    </a>
+    <nav class="nav" id="nav"></nav>
+    <div class="side-foot">
+      <button class="side-btn" id="themeBtn" type="button" data-action="theme"></button>
+    </div>
+  </aside>
+  <div class="side-scrim" data-action="closeSide"></div>
+
+  <div class="main-wrap">
+    <div class="ribbon" role="note">
+      <span class="ribbon-tag">Демо</span>
+      <span class="ribbon-text">Вымышленная компания «Линия». Люди, объекты и суммы — пример, не данные заказчика.</span>
+      <button class="ribbon-btn" type="button" data-action="reset">Сбросить демо</button>
+    </div>
+    <header class="top">
+      <button class="icon-btn menu-btn" type="button" data-action="openSide" aria-label="Открыть меню"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+      <div class="top-title" id="topTitle"></div>
+      <div class="top-right">
+        <span class="date-chip">Чт, 22 октября · 20:15</span>
+        <button class="role-btn" type="button" data-action="roleMenu" id="roleBtn" aria-haspopup="menu"></button>
+      </div>
+    </header>
+    <main class="main" id="view" tabindex="-1"></main>
+  </div>
+</div>
+
+<div class="login" id="login" hidden></div>
+<div id="criteria"></div>
+<div class="modal-root" id="modal"></div>
+<div class="drawer-root" id="drawer"></div>
+<div class="menu-root" id="menu"></div>
+<div class="toast-wrap" id="toasts" aria-live="polite"></div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
